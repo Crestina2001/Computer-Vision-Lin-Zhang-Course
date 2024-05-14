@@ -29,9 +29,9 @@ Different from features extracted by Harris edge detection, which is only invari
 
 **Effect:**
 
-![](./save/feature-extraction-1.jpg)
+![](./Save/feature-extraction-1.jpg)
 
-![img](./save/feature-extraction-2.jpg)
+![img](./Save/feature-extraction-2.jpg)
 
 **Second Step: Feature Matching and Ratio Testing**
 
@@ -41,7 +41,7 @@ After the first step, we have acquired the key points and their descriptors of t
 
 **Effect:**
 
-![img](./save/matched.jpg)
+![img](./Save/matched.jpg)
 
 **Third Step: Estimate the Homographic Matrix with RANSAC**
 
@@ -57,4 +57,4 @@ Firstly, we transform the right image so that its key points overlap with their 
 
 **Effect:**
 
-![img](./save/result.jpg)
+![img](./Save/result.jpg)
