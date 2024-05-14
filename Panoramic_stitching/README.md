@@ -17,7 +17,7 @@ To choose different pictures to stitch, you can revise the path of pictures in m
 
 # Report
 
-***5. (Programming) Get two images\*** **I*****1 and\*** **I*****2 of our campus and make sure that the\*** ***\**\*major parts of\*\**\*** **I*****1 and\*** **I*****2 are from the same physical plane. Stitch\*** **I*****1 and\*** **I*****2 together\*** ***\**\*to get a panorama view using scale-normalized LoG (or DoG) based interest point\*\** \**\*detector and SIFT descriptor. You can use OpenCV or VLFeat.\*\**\***
+5. (Programming) Get two images I1 and I2 of our campus and make sure that the major parts of I1 and I2 are from the same physical plane. Stitch I1 and I2 together to get a panorama view using scale-normalized LoG (or DoG) based interest point detector and SIFT descriptor. You can use OpenCV or VLFeat.
 
  
 
@@ -29,9 +29,9 @@ Different from features extracted by Harris edge detection, which is only invari
 
 **Effect:**
 
-![img](file:///C:/Users/Forrest/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![](./save/feature-extraction-1.jpg)
 
-![img](file:///C:/Users/Forrest/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![img](./save/feature-extraction-2.jpg)
 
 **Second Step: Feature Matching and Ratio Testing**
 
@@ -41,19 +41,13 @@ After the first step, we have acquired the key points and their descriptors of t
 
 **Effect:**
 
-![img](file:///C:/Users/Forrest/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![img](./save/matched.jpg)
 
 **Third Step: Estimate the Homographic Matrix with RANSAC**
 
 **Description:**
 
 Firstly, randomly select a subset(at least four points) from key points and other points make up a complementary set. Secondly, fit a homographic matrix on them with Least Square Method. Thirdly, exert photographic transformation on every point in the complementary set with the homographic matrix to get transformed points. Fourthly, compute the distance between each transformed point and its matched points in the second image. If the distance is within a given threshold, count it. If the number of points counted exceeds another given threshold, return this homographic matrix and counted points. Otherwise, go back to the first step.
-
-**Effect:**
-
-M=
-
-![img](file:///C:/Users/Forrest/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png)
 
 **Final Step: Stitch the two images**
 
@@ -63,4 +57,4 @@ Firstly, we transform the right image so that its key points overlap with their 
 
 **Effect:**
 
-![img](file:///C:/Users/Forrest/AppData/Local/Temp/msohtmlclip1/01/clip_image009.jpg)
+![img](./save/result.jpg)
