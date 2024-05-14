@@ -1,10 +1,13 @@
 # Installation and Running
 
 You need to install:
-opencv(My python is 3.8.8 and opencv is correspondent to it)
+
+```
+opencv
 matplotlib
 numpy
-imutils(just use 'pip install imutils' to install it)
+imutils
+```
 
 After the installation, just run 'python main.py' in cmd
 
